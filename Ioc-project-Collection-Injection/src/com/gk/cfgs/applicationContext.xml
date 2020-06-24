@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="stDob" class="java.util.Date">
+		<property name="year" value="94" />
+		<property name="month" value="04" />
+		<property name="date" value="12" />
+	</bean>
+	<bean id="stDob1" class="java.util.Date">
+		<property name="year" value="95" />
+		<property name="month" value="04" />
+		<property name="date" value="12" />
+	</bean>
+	<bean id="stDob2" class="java.util.Date">
+		<property name="year" value="94" />
+		<property name="month" value="01" />
+		<property name="date" value="12" />
+	</bean>
+
+	<bean id="stDetails" class="com.gk.beans.StudentDetails">
+		<property name="sname">
+			<list>
+				<value>Guddu</value>
+				<value>Sudha</value>
+				<value>pankaj</value>
+			</list>
+		</property>
+		<property name="marks">
+			<array>
+				<value>360</value>
+				<value>340</value>
+				<value>320</value>
+			</array>
+		</property>
+	</bean>
+	<bean id="clgDetails" class="com.gk.beans.CollegeDetails">
+		<property name="clgName">
+			<list>
+				<value>L.s College</value>
+			</list>
+		</property>
+		<property name="deptName">
+			<map>
+				<entry key="101" value="maths" />
+				<entry key="102" value="phys" />
+				<entry key="103" value="chem" />
+			</map>
+		</property>
+	</bean>
+	<bean id="pDtails" class="com.gk.beans.PersonalProfile">
+		<property name="PName">
+			<list>
+				<value>Sudha Yadav</value>
+			</list>
+		</property>
+		<property name="PAge">
+			<list>
+				<value>23</value>
+			</list>
+		</property>
+		<property name="pmob">
+			<set>
+				<value>8003245671</value>
+				
+			</set>
+		</property>
+		<property name="PBankDetails">
+			<map>
+				<entry key="3333151765" value="SBI">
+				</entry>
+				</map>
+		</property>
+	</bean>
+<bean id="fDetails" class="com.gk.beans.FruitsStore">
+ <property name="fname" >
+ <props>
+ <prop key="Apple">Green</prop>
+ </props>
+ </property>
+ </bean>
+</beans>
