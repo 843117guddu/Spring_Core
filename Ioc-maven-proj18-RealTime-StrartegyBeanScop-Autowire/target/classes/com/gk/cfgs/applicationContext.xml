@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+
+<!-- here driverclass name, url , username,and password must be same  as in datasource -->
+<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource" scope="singleton">
+<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+<property name="username" value="system"/>
+<property name="password" value="system"/>
+</bean>
+
+<bean id="dao" class="com.gk.dao.StudentDaoImpl" autowire="constructor" scope="singleton"/>
+
+<bean id="service" class="com.gk.service.StudentOperationsServiceImpl" autowire="constructor" scope="singleton"/>
+<!--cnfg vo dto bo  -->
+<bean id="vo" class="com.gk.vo.StudentVo" scope="prototype"/>
+<bean id="dto" class="com.gk.dto.StudentDto" scope="prototype"/>
+<bean id="bo" class="com.gk.bo.StudentBo" scope="prototype"/>
+<bean id="controller" class="com.gk.controller.MainController" autowire="constructor" scope="singleton"/>
+</beans>

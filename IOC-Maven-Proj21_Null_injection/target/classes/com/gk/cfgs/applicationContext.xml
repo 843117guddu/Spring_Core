@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- cnfg dob doj and dom -->
+<bean id="dob" class="java.util.Date" p:year="1994" p:month="04" p:date="12" scope="prototype"/>
+<bean id="doj" class="java.util.Date" p:year="2019" p:month="08" p:date="19" scope="prototype"/>
+<bean id="dom" class="java.util.Date" p:year="2025" p:month="04" p:date="12" scope="prototype"/>
+<bean id="pProfile" class="com.gk.beans.PersonProfile" c:aNo="253029117363" c:name="Guddu Yadav" c:age="25" c:dob-ref="dob" c:doj-ref="doj" c:dom-ref="dom" lazy-init="false"/>
+<bean id="sProfile" class="com.gk.beans.PersonProfile" lazy-init="default">
+<constructor-arg><value>253029117363</value></constructor-arg>
+<constructor-arg><value>Sangeeta swaraj</value></constructor-arg>
+ <constructor-arg><value>20</value></constructor-arg>
+  <constructor-arg><ref bean="dob"/></constructor-arg>
+<constructor-arg><ref bean="doj"/></constructor-arg>
+<constructor-arg><null/></constructor-arg>
+</bean>
+</beans>

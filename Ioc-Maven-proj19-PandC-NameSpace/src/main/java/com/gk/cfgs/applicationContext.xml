@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd" >
+	<!-- cnfg date -->
+	<bean id="dob" class="java.util.Date" p:year="1994" p:month="4" p:date="12">
+	<!-- <property name="year" value="1994"/>
+	<property name="month" value="4"/>
+	<property name="date" value="12"/> --></bean>
+	<!-- Dependent bean cfgs -->
+	<bean id="course" class="com.gk.beans.Course" c:courseId="101" c:courseName="Java" c:duration="1" c:fee="4000"/>
+
+	<!-- target bean cfgs -->
+	<bean id="std" class="com.gk.beans.Student" c:sno="1" c:sname="Guddu" c:sadd="Muz" c:dob-ref="dob" c:course-ref="course"/>
+</beans>
