@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<!-- Dependent bean cfgs -->
+	<bean id="tp" class="com.gk.autowire.TourPlan" primary="false">
+	<property name="places">
+	<array><value>hyd</value>
+	<value>Delhi</value>
+	<value>Goa</value>
+	<value>Gangtok</value>
+	</array>
+	</property>
+	</bean>
+	<bean id="tp1" class="com.gk.autowire.TourPlan" primary="true">
+	<property name="places">
+	<array><value>muz</value>
+	<value>patna</value>
+	<value>Rajgeer</value>
+	<value>SasaRam</value>
+	</array>
+	</property>
+	</bean>
+	<!-- target bean cfgs -->
+	<bean id="agent" class="com.gk.autowire.TravelAgent" autowire="byType" />
+</beans>
