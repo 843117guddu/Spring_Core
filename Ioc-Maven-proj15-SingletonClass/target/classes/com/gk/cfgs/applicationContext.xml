@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- cfgs airthmetic bean -->
+	<bean id="air" class="com.gk.singleton.Airthmetic"
+		scope="prototype" />
+	<!-- cfgs printer -->
+	<bean id="printer" class="com.gk.singleton.Printer"
+		scope="prototype"  />
+	<!-- cfgs calculate area -->
+	<bean id="area" class="com.gk.singleton.CalculateAreaOfCircle"
+		scope="prototype"  />
+
+
+
+	<!-- <bean id="air" class="com.gk.singleton.Airthmetic" scope="prototype" 
+		factory-method="getInstance"/> cfgs printer <bean id="printer" class="com.gk.singleton.Printer" 
+		scope="prototype" factory-method="getInstance"/> cfgs calculate area <bean 
+		id="area" class="com.gk.singleton.CalculateAreaOfCircle" scope="prototype" 
+		factory-method="getInstance"/> -->
+</beans>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+<!-- Dob configuration -->
+	<bean id="dob" class="java.util.Date">
+		<property name="year" value="1996" />
+		<property name="month" value="04" />
+		<property name="date" value="12" />
+	</bean>
+	
+	<!-- Doj configuration -->
+	
+	<bean id="doj" class="java.util.Date">
+		<property name="year" value="120" />
+		<property name="month" value="04" />
+		<property name="date" value="12" />
+	</bean>
+	
+	<!-- StudentDetails bean configuration -->
+	
+	<bean class="com.gk.beans.StudentDetails">
+		<constructor-arg index="0">
+			<array>
+				<value>80</value>
+				<value>85</value>
+				<value>84</value>
+			</array>
+		</constructor-arg>
+		<constructor-arg index="1">
+			<array>
+				<ref bean="dob" />
+				<ref bean="doj" />
+			</array>
+		</constructor-arg>
+	</bean>
+	
+		<!-- EmployeeDetails bean configuration -->
+		
+		<bean  class="com.gk.beans.EmployeeDetals">
+		<property name="EName">
+		<list><value>Guddu Yadav</value></list>
+		</property>
+		<property name="EAge">
+		<list><value>25</value></list>
+		</property>
+		<property name="EMob">
+		<set><value>8409867023</value></set>
+		</property>
+		<property name="EBankDetails">
+		<map><entry key="3333512734" value="CBI"/></map>
+		</property>
+		<property name="EDoj">
+		<list><ref bean="doj"/></list>
+		</property>
+		<property name="EDob">
+		<list><ref bean="dob"/></list>
+		</property>
+		
+		</bean>
+			<!--  Second EmployeeDetails bean configuration -->
+			
+		<bean   class="com.gk.beans.EmployeeDetals">
+		<property name="EName">
+		<list><value>Sudha Yadav</value></list>
+		</property>
+		<property name="EAge">
+		<list><value>25</value></list>
+		</property>
+		<property name="EMob">
+		<set><value>8409867023</value></set>
+		</property>
+		<property name="EBankDetails">
+		<map><entry key="3333512734" value="CBI"/></map>
+		</property>
+		<property name="EDoj">
+		<list><ref bean="doj"/></list>
+		</property>
+		<property name="EDob">
+		<list><ref bean="dob"/></list>
+		</property>
+		
+		</bean>
+</beans>
