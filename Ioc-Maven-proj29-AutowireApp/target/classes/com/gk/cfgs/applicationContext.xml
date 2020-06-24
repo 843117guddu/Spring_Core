@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-init-method="myInit" default-destroy-method="myDestroy"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-4.3.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+<!--cgs java.util.date  -->
+<bean id="dob" class="java.util.Date" p:year="1994" p:month="04" p:date="12"/>
+<!-- cfg bean  -->
+<bean id="cal" class="java.util.Calendar" factory-method="getInstance"/>
+<!-- <context:annotation-config  /> -->
+<bean id="crs" class="com.gk.bean.Course" p:cid="101" p:cname="java"/> 
+
+<bean id="crs1" class="com.gk.bean.Course" p:cid="102" p:cname="Ad java"/>
+
+ <bean id="st" class="com.gk.bean.Student" p:sno="201" p:sname="Guddu" />
+<context:annotation-config/>
+</beans>
